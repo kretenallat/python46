@@ -10,7 +10,7 @@ REDIRECT_URI='http://example.com'  # "http://localhost:8888/callback"  'http://e
 SCOPE = 'user-library-read'
 CACHE = '.spotipyoauthcache'
 ##############################
-
+# fetch test
 print("WE GOIN BACK IN TIME MARTY! WHERE DO YOU WANT TO GO? YYYY-MM-DD format")
 date = input()
 link = "https://www.billboard.com/charts/hot-100/" + date
