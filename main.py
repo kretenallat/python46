@@ -1,11 +1,17 @@
+import os
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 import requests
 import spotipy
 from spotipy import oauth2
-import pprint
 
-CLIENT_ID='15ae4c73a85e414cbebd60b25aa779e0'
-CLIENT_SECRET='7460f1b5ebab40b4abf548121e393656'
+load_dotenv()
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')# Verify it worked
+if CLIENT_ID is not None and CLIENT_SECRET is not None:
+    print('It worked')
+
+
 REDIRECT_URI='http://example.com'  # "http://localhost:8888/callback"  'http://example.com'
 SCOPE = 'user-library-read'
 CACHE = '.spotipyoauthcache'
@@ -58,7 +64,7 @@ for song in song_titles:
 # song_uri = result["tracks"]["items"][0]["uri"]
 # print("song uri: " + song_uri)
 playlist_info = sp.user_playlist_create(user=user_id,
-                                        name="billboard top100" + date,
+                                        name="billboard top100 " + date,
                                         public=True,
                                         collaborative=False,
                                         description="The top 100 songs on the week of " + date)
