@@ -24,7 +24,7 @@ soup = BeautifulSoup(webpage, "html.parser")
 search_result = soup.select("li ul li h3")
 song_titles = [song.getText().strip() for song in search_result]
 print(song_titles)
-
+# bazdmek
 
 sp = spotipy.Spotify(
     auth_manager=oauth2.SpotifyOAuth(
